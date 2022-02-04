@@ -6,10 +6,11 @@
 
 #include "md5.h"
 
-#ifndef _MSC_VER
+#if defined(__APPLE__)
+#include <machine/endian.h>
+#elif !defined(_MSC_VER)
 #include <endian.h>
 #endif
-
 
 /// same as reset()
 MD5::MD5()

@@ -7,10 +7,11 @@
 #include "keccak.h"
 
 // big endian architectures need #define __BYTE_ORDER __BIG_ENDIAN
-#ifndef _MSC_VER
+#if defined(__APPLE__)
+#include <machine/endian.h>
+#elif !defined(_MSC_VER)
 #include <endian.h>
 #endif
-
 
 /// same as reset()
 Keccak::Keccak(Bits bits)
