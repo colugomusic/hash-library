@@ -13,5 +13,11 @@ target_sources(hash-library-md5 PUBLIC
 )
 install(
 	TARGETS hash-library-md5
+	EXPORT hash-libraryTargets
 	FILE_SET HEADERS
+)
+install(EXPORT hash-libraryTargets
+    FILE hash-libraryConfig.cmake
+    NAMESPACE hash-library::
+    DESTINATION lib/cmake/hash-library
 )
