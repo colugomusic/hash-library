@@ -11,6 +11,7 @@ target_sources(hash-library-md5 PUBLIC
 	FILES
 		md5.h
 )
+set_target_properties(hash-library-md5 PROPERTIES EXPORT_NAME md5)
 install(
 	TARGETS hash-library-md5
 	EXPORT hash-libraryTargets
